@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import torneo.Interfaces.IImprimible;
 import torneo.Interfaces.IJugador;
 
-public class Equipo {
+public class Equipo
+        implements IImprimible {
     private String name;
     private String abreviatura;
     private List<Jugador> jugadores = new ArrayList<>();
@@ -84,7 +86,15 @@ public class Equipo {
     return resultado; 
 
         }
-        }
+
+    
+    public String impresion() {
+        
+            return "["+"Equipo"+"] "+getName() + " > "+ getAbreviatura();
+        
+    }
+
+}
     
 
      

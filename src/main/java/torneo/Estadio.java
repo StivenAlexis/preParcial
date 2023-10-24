@@ -1,6 +1,9 @@
 package torneo;
 
-public class Estadio {
+import torneo.Interfaces.IImprimible;
+
+public class Estadio
+        implements IImprimible {
     
     private String nombre ="";
     private String ciudad ="";
@@ -41,5 +44,10 @@ public class Estadio {
 
         return getName()+", "+getCiudad()+" ("+getPais()+")";
 
+    }
+
+    @Override
+    public String impresion() {
+        return "["+"Estadio"+"] "+ getName() + " ("+ getCiudad()+ " - "+getPais()+")";
     }
 }

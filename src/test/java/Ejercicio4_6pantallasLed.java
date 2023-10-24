@@ -6,6 +6,7 @@ import torneo.Equipo;
 import torneo.Estadio;
 import torneo.Jugador;
 import torneo.PantallaLed;
+import torneo.Interfaces.IImprimible;
 import torneo.Interfaces.IJugador;
 
 public class Ejercicio4_6pantallasLed {
@@ -27,9 +28,9 @@ public class Ejercicio4_6pantallasLed {
 
 
        
-        assertEquals("[Jugador 6] Marcos Rojo > Defensor", pantallaLed.imprimir(jugadorBoca6));        
-        assertEquals("[Equipo] Boca Juniors > BOC", pantallaLed.imprimir(boca));
-        assertEquals("[Estadio] La Bombonera (Buenos Aires - Argentina)", pantallaLed.imprimir(estadioBombonera));
+        assertEquals("[Jugador 6] Marcos Rojo > Defensor", pantallaLed.imprimir( (IImprimible) jugadorBoca6));        
+        assertEquals("[Equipo] Boca Juniors > BOC", pantallaLed.imprimir((IImprimible) boca));
+        assertEquals("[Estadio] La Bombonera (Buenos Aires - Argentina)", pantallaLed.imprimir((IImprimible)estadioBombonera));
 
 
 

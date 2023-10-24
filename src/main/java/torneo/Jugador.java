@@ -1,9 +1,11 @@
 package torneo;
 
+
+import torneo.Interfaces.IImprimible;
 import torneo.Interfaces.IJugador;
 
 public class Jugador 
-    implements IJugador{
+    implements IJugador,IImprimible{
     private String name;
     private String posicion;
    
@@ -40,5 +42,11 @@ public class Jugador
         this.posicion = posicion;
     }
 
+  
+    public String impresion() {
+        
+       return "["+"Jugador "+getNumero()+"] "+getName()+" > " + getPosicion();
+    }
 
+    
 }

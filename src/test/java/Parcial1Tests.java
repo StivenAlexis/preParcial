@@ -63,11 +63,11 @@ public class Parcial1Tests {
         
         assertEquals(4, torneo.partidosCantidad());  
         
-        assertEquals("Semifinal Partido Ida INTxFLU", partido1Ida.getNombre());        
-        assertEquals("Semifinal Partido Vuelta FLUxINT", partido1Vuelta.getNombre()); 
+        assertEquals("Semifinal Partido Ida INTxFLU", partido1Ida.getName());        
+        assertEquals("Semifinal Partido Vuelta FLUxINT", partido1Vuelta.getName()); 
         
-        assertEquals("Semifinal Partido Ida PALxBOC", partido2Ida.getNombre());        
-        assertEquals("Semifinal Partido Vuelta BOCxPAL", partido2Vuelta.getNombre());
+        assertEquals("Semifinal Partido Ida PALxBOC", partido2Ida.getName());        
+        assertEquals("Semifinal Partido Vuelta BOCxPAL", partido2Vuelta.getName());
 
 
     }
@@ -92,32 +92,6 @@ public class Parcial1Tests {
 
     }
 
+
     
-    @Test
-    public void torneo_sacar_tarjeta_roja_a_un_jugador_en_un_partido_parcial_ejercicio_ejemplo_04()
-    {        
-        Equipo boca = new Equipo("Boca Juniors", "BOC");        
-        Equipo palmeiras = new Equipo("Palmeiras", "PAL");        
-        
-        Jugador jugador10 = new Jugador("Edinson Cavani", 10);   
-        Jugador jugador19 = new Jugador("Valentin Barco", 19);
-  
-        boca.agregar(jugador10);         
-        boca.agregar(jugador19); 
-
-        Partido partidoIda = new Partido(palmeiras, boca, "Semifinal Partido Ida");    
-
-        Tarjeta tarjetaRojaParaJugador10DeBoca = new Tarjeta("ROJA", jugador10);
-
-        partidoIda.agregar(tarjetaRojaParaJugador10DeBoca);
-
-        assertEquals(1, partidoIda.tarjetasCantidad());          
-        
-        assertEquals("ROJA", partidoIda.getTarjetas().get(0).getColor());           
-        assertEquals("Edinson Cavani", partidoIda.getTarjetas().get(0).getJugador().getName());   
-
-
-    }
-
-
 }

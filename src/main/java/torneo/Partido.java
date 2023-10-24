@@ -6,18 +6,12 @@ import java.util.List;
 public class Partido {
     private Equipo equipoLocal;
     private Equipo equipoVisitante;
-
     private String nombre;
-    
-    public String getNombre() {
-        return nombre+" "+equipoLocal.getAbreviatura()+"x"+equipoVisitante.getAbreviatura();
-    }
+    private Estadio estadio;
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 
-    private List<Tarjeta> tarjetas = new ArrayList<>();
+ 
+    private List<TarjetaBase> tarjetas = new ArrayList<>();
 
     public Partido(Equipo equipoLocal, Equipo equipoVisitante, String nombre) {
         setEquipoLocal(equipoLocal);
@@ -25,7 +19,14 @@ public class Partido {
         setNombre(nombre);
     }
 
-    public void agregar(Tarjeta tarjeta) {
+    public Partido(Estadio estadio, Equipo equipoLocal, Equipo equipoVisitante, String nombre) {
+        setEstadio(estadio);
+        setEquipoLocal(equipoLocal);
+        setEquipoVisitante(equipoVisitante);
+        setNombre(nombre);
+    }
+
+    public void agregar(TarjetaBase tarjeta) {
         tarjetas.add(tarjeta);
     }
 
@@ -33,7 +34,7 @@ public class Partido {
         return tarjetas.size();
     }
 
-    public List<Tarjeta> getTarjetas() {
+    public List<TarjetaBase> getTarjetas() {
         return tarjetas;
     }
 
@@ -53,6 +54,21 @@ public class Partido {
         this.equipoVisitante = equipoVisitante;
     }
 
+    public String getName() {
+        return nombre+" "+equipoLocal.getAbreviatura()+"x"+equipoVisitante.getAbreviatura();
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Estadio getEstadio() {
+        return estadio;
+    }
+
+    public void setEstadio(Estadio estadio) {
+        this.estadio = estadio;
+    }
 
 
 }

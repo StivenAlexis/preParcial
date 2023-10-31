@@ -46,7 +46,7 @@ public class Estadio
 
     }
 
-    @Override
+    
     public String impresion() {
         return "["+"Estadio"+"] "+ getName() + " ("+ getCiudad()+ " - "+getPais()+")";
     }

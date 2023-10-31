@@ -8,9 +8,9 @@ public class Partido {
     private Equipo equipoVisitante;
     private String nombre;
     private Estadio estadio;
-
-
- 
+    private Arbitro arbitro;
+    private Arbitro arbitroAsistente;
+    private List<Arbitro> arbitroLinea = new ArrayList<>();
     private List<TarjetaBase> tarjetas = new ArrayList<>();
 
     public Partido(Equipo equipoLocal, Equipo equipoVisitante, String nombre) {
@@ -68,6 +68,30 @@ public class Partido {
 
     public void setEstadio(Estadio estadio) {
         this.estadio = estadio;
+    }
+
+    public Arbitro getArbitro() {
+        return arbitro;
+    }
+
+    public void setArbitro(Arbitro arbitro) {
+        this.arbitro = arbitro;
+    }
+
+    public Arbitro getArbitroAsistente() {
+        return arbitroAsistente;
+    }
+
+    public void setArbitroAsistente(Arbitro arbitroAsistente) {
+        this.arbitroAsistente = arbitroAsistente;
+    }
+
+    public List<Arbitro> getArbitroLinea() {
+        return arbitroLinea;
+    }
+
+    public void setArbitroLinea(List<Arbitro> arbitroLinea) {
+        this.arbitroLinea = arbitroLinea;
     }
 
 

@@ -15,6 +15,14 @@ public class Equipo
     private List<IJugador> Ijugadores = new ArrayList<>();
 
 
+    public List<IJugador> getIjugadores() {
+        return Ijugadores;
+    }
+
+    public void setIjugadores(List<IJugador> ijugadores) {
+        Ijugadores = ijugadores;
+    }
+
     public Equipo(String name, String abreviatura) {
         setName(name);
         setAbreviatura(abreviatura);
@@ -87,7 +95,7 @@ public class Equipo
 
         }
 
-    
+        
     public String impresion() {
         
             return "["+"Equipo"+"] "+getName() + " > "+ getAbreviatura();

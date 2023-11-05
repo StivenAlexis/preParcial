@@ -1,5 +1,7 @@
 package torneo;
 
+import torneo.Interfaces.IJugador;
+
 public class TarjetaAmarilla 
     extends TarjetaBase{
 
@@ -7,5 +9,11 @@ public class TarjetaAmarilla
         super("AMARILLA", jugador);
        
     }
+
+    public TarjetaAmarilla(IJugador ijugador) {
+        super("ROJA", ijugador);
+        
+    }
+
 
 }

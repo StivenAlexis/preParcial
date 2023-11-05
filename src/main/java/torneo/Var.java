@@ -2,6 +2,7 @@ package torneo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Var {
@@ -26,9 +27,30 @@ public class Var {
     }
 
 
+    public int cantidadTarjetas(Equipo equipo) {
+        int cantidad = 0; 
+        for (int i = 0; i < equipo.getIjugadores().size(); i++) {
+            for (TarjetaBase tarjetasJugadores : getPartido().getTarjetas()) {
+            
+                if(tarjetasJugadores.getIjugador()==equipo.getIjugadores().get(i)){
+                    cantidad++;
+                }
+        }
+    }
+            
+       return cantidad;
+    }
 
 
-
+    /* 
+    public int cantidadTarjetas(Equipo equipo) {
+        return (int) equipo.getIjugadores().stream()
+                .mapToLong(jugador -> getPartido().getTarjetas().stream()
+                    .filter(tarjeta -> tarjeta.getIjugador() == jugador)
+                    .count())
+                .sum();
+    }
+   */ 
 
     public int cantidadTarjetasRojas() {
         
@@ -50,6 +72,6 @@ public class Var {
             .count();
     }
     
-
+    
 
 }

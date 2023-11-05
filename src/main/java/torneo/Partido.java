@@ -28,6 +28,7 @@ public class Partido {
 
     public void agregar(TarjetaBase tarjeta) {
         tarjetas.add(tarjeta);
+        
     }
 
     public int tarjetasCantidad() {

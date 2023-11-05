@@ -7,9 +7,17 @@ public class Torneo {
     private String nombre;
     
     private List<Equipo> equipos = new ArrayList<>();
-    private List<Partido> partidos = new ArrayList();
+    private List<Partido> partidos = new ArrayList<>();
 
 
+
+    public List<Partido> getPartidos() {
+        return partidos;
+    }
+
+    public void setPartidos(List<Partido> partidos) {
+        this.partidos = partidos;
+    }
 
     public Torneo(String nombre) {
         setNombre(nombre);

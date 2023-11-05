@@ -26,6 +26,19 @@ public class Partido {
         setNombre(nombre);
     }
 
+    public Partido(Arbitro arbitro,Arbitro arbitroAsistente, List<Arbitro> ArbitrosLinea,  Estadio estadio, Equipo equipoLocal, Equipo equipoVisitante, String nombre) {
+        if(arbitroLinea.size()>2){
+            throw new IllegalArgumentException("El partido no puede tener mas de dos arbitros de linea");
+        }
+        setArbitro(arbitro);
+        setArbitroAsistente(arbitroAsistente);
+        setArbitroLinea(ArbitrosLinea);
+        setEstadio(estadio);
+        setEquipoLocal(equipoLocal);
+        setEquipoVisitante(equipoVisitante);
+        setNombre(nombre);
+    }
+
     public void agregar(TarjetaBase tarjeta) {
         tarjetas.add(tarjeta);
         

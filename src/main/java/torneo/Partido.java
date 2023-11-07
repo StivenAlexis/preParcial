@@ -1,7 +1,10 @@
 package torneo;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 public class Partido {
     private Equipo equipoLocal;
@@ -12,7 +15,11 @@ public class Partido {
     private Arbitro arbitroAsistente;
     private List<Arbitro> arbitroLinea = new ArrayList<>();
     private List<TarjetaBase> tarjetas = new ArrayList<>();
+    private Date fecha;
+    private DateFormat fechaFormateada = new SimpleDateFormat("dd/M/yyyy");
 
+  
+   
     public Partido(Equipo equipoLocal, Equipo equipoVisitante, String nombre) {
         setEquipoLocal(equipoLocal);
         setEquipoVisitante(equipoVisitante);
@@ -26,17 +33,18 @@ public class Partido {
         setNombre(nombre);
     }
 
-    public Partido(Arbitro arbitro,Arbitro arbitroAsistente, List<Arbitro> ArbitrosLinea,  Estadio estadio, Equipo equipoLocal, Equipo equipoVisitante, String nombre) {
-        if(arbitroLinea.size()>2){
-            throw new IllegalArgumentException("El partido no puede tener mas de dos arbitros de linea");
-        }
+    public Partido(Arbitro arbitro,Arbitro arbitroAsistente, List<Arbitro> arbitrosLinea,  Estadio estadio, Equipo equipoLocal, Equipo equipoVisitante, String nombre) {
+        if(arbitrosLinea.size()>2 || arbitro==null || arbitroAsistente==null || estadio==null || equipoLocal==null || equipoVisitante==null){
+           throw new IllegalArgumentException("Este campo es obligatorio");
+        }else{
         setArbitro(arbitro);
         setArbitroAsistente(arbitroAsistente);
-        setArbitroLinea(ArbitrosLinea);
+        setArbitroLinea(arbitrosLinea);
         setEstadio(estadio);
         setEquipoLocal(equipoLocal);
         setEquipoVisitante(equipoVisitante);
         setNombre(nombre);
+        }
     }
 
     public void agregar(TarjetaBase tarjeta) {
@@ -106,6 +114,22 @@ public class Partido {
 
     public void setArbitroLinea(List<Arbitro> arbitroLinea) {
         this.arbitroLinea = arbitroLinea;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+     public String getFechaFormateada() {
+        return fechaFormateada.format(fecha);
+    }
+
+    public void setFechaFormateada(DateFormat fehcaFormateada) {
+        this.fechaFormateada = fehcaFormateada;
     }
 
 

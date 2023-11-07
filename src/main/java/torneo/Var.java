@@ -20,7 +20,7 @@ public class Var {
 
     public Var(Partido partido, AsistenteDeVideo AsistenteV, List<AVar> Avars) {
         if (Avars.size() > 3) {
-            throw new IllegalArgumentException("La lista de Asistentes del vare no puede contener más de 3 Asistentes ");
+            throw new IllegalArgumentException("Este campo es obligatorio");
         }
     
         this.partido = partido;
